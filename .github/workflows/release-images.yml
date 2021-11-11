@@ -25,31 +25,31 @@ jobs:
       component: pinpoint-agent
 
   collector:
-    uses: .github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-collector
           
   flink:
-    uses: .github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-flink
            
   hbase:
-    uses: .github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-hbase
           
   mysql:
-    uses: .github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-mysql
           
   quickstart:
-    uses: .github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-quickstart
           
   web:
-    uses: .github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-web
