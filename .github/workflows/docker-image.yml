@@ -38,7 +38,10 @@ jobs:
 
       - name: Update repo description
         uses: peter-evans/dockerhub-description@v2
-        env:
+        with:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           DOCKERHUB_REPOSITORY: galam/test
+          readme-filepath: ./pinpoint-agent/Readme.md
+
+        
