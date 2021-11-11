@@ -20,36 +20,36 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
   agent:
-    uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-agent
 
   collector:
-    uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
+    uses: .github/workflows/docker-image.yml@master
     with:
       component: pinpoint-collector
           
   flink:
-    uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
+    uses: .github/workflows/docker-image.yml@master
     with:
       component: pinpoint-flink
            
   hbase:
-    uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
+    uses: .github/workflows/docker-image.yml@master
     with:
       component: pinpoint-hbase
           
   mysql:
-    uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
+    uses: .github/workflows/docker-image.yml@master
     with:
       component: pinpoint-mysql
           
   quickstart:
-    uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
+    uses: .github/workflows/docker-image.yml@master
     with:
       component: pinpoint-quickstart
           
   web:
-    uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
+    uses: .github/workflows/docker-image.yml@master
     with:
       component: pinpoint-web
