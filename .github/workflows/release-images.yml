@@ -21,36 +21,36 @@ jobs:
         uses: docker/setup-buildx-action@v1
         
       - name: agent
-        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
         with:
           component: pinpoint-agent
                   
       - name: collector
-        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
         with:
           component: pinpoint-collector
           
       - name: flink
-        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
         with:
           component: pinpoint-flink
            
       - name: hbase
-        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
         with:
           component: pinpoint-hbase
           
       - name: mysql
-        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
         with:
           component: pinpoint-mysql
           
       - name: quickstart
-        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
         with:
           component: pinpoint-quickstart
           
       - name: web
-        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@master
         with:
           component: pinpoint-web
