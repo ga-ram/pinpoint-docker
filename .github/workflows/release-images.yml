@@ -9,33 +9,54 @@ jobs:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-agent
+      docker_username: ${{ secrets. DOCKER_USERNAME }}
+      docker_token: ${{ secrets.DOCKER_TOKEN }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
 
   collector:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-collector
+      docker_username: ${{ secrets. DOCKER_USERNAME }}
+      docker_token: ${{ secrets.DOCKER_TOKEN }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
           
   flink:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-flink
+      docker_username: ${{ secrets. DOCKER_USERNAME }}
+      docker_token: ${{ secrets.DOCKER_TOKEN }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
            
   hbase:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-hbase
+      docker_username: ${{ secrets. DOCKER_USERNAME }}
+      docker_token: ${{ secrets.DOCKER_TOKEN }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
           
   mysql:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-mysql
+      docker_username: ${{ secrets. DOCKER_USERNAME }}
+      docker_token: ${{ secrets.DOCKER_TOKEN }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
           
   quickstart:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-quickstart
+      docker_username: ${{ secrets. DOCKER_USERNAME }}
+      docker_token: ${{ secrets.DOCKER_TOKEN }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
           
   web:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-web
+      docker_username: ${{ secrets. DOCKER_USERNAME }}
+      docker_token: ${{ secrets.DOCKER_TOKEN }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
