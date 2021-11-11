@@ -1,0 +1,56 @@
+name: Release Images
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        
+      - name: agent
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        with:
+          component: pinpoint-agent
+                  
+      - name: collector
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        with:
+          component: pinpoint-collector
+          
+      - name: flink
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        with:
+          component: pinpoint-flink
+           
+      - name: hbase
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        with:
+          component: pinpoint-hbase
+          
+      - name: mysql
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        with:
+          component: pinpoint-mysql
+          
+      - name: quickstart
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        with:
+          component: pinpoint-quickstart
+          
+      - name: web
+        uses: ga-ram/pinpoint-docker/.github/workflow/docker-image.yml@main
+        with:
+          component: pinpoint-web
