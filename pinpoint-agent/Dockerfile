@@ -1,7 +1,7 @@
 FROM alpine:3.7
 
-ARG PINPOINT_VERSION=${PINPOINT_VERSION:-2.4.0}
-ARG INSTALL_URL=https://github.com/naver/pinpoint/releases/download/v${PINPOINT_VERSION}/pinpoint-agent-${PINPOINT_VERSION}.tar.gz
+ARG PINPOINT_VERSION=${PINPOINT_VERSION:-2.4.0-SNAPSHOT}
+ARG INSTALL_URL=https://github.com/ga-ram/pinpoint/releases/download/${PINPOINT_VERSION}/pinpoint-agent-${PINPOINT_VERSION}.tar.gz
 
 COPY /build/scripts/configure-agent.sh /usr/local/bin/
 
