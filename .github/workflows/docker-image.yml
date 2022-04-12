@@ -50,7 +50,7 @@ jobs:
         with:
           username: ${{ secrets.docker_username }}
           password: ${{ secrets.docker_password }}
-          repository: pinpointdocker/${{ inputs.component }}
+          repository: ${{ inputs.docker_repository }}/${{ inputs.component }}
           readme-filepath: ./${{ inputs.component }}/Readme.md
 
         
