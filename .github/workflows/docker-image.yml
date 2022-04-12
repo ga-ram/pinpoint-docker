@@ -13,6 +13,8 @@ on:
         required: true
       docker_password:
         required: true
+      docker_repository:
+        required: true
 
 jobs:
   push_to_registry:
@@ -50,7 +52,7 @@ jobs:
         with:
           username: ${{ secrets.docker_username }}
           password: ${{ secrets.docker_password }}
-          repository: ${{ inputs.docker_repository }}/${{ inputs.component }}
+          repository: ${{ secrets.docker_repository }}/${{ inputs.component }}
           readme-filepath: ./${{ inputs.component }}/Readme.md
 
         
