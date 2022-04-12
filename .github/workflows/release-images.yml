@@ -13,6 +13,7 @@ jobs:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_token: ${{ secrets.DOCKER_TOKEN }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_repository: ${{ secrets.DOCKER_REPOSITORY }}
 
   collector:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
@@ -22,6 +23,7 @@ jobs:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_token: ${{ secrets.DOCKER_TOKEN }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_repository: ${{ secrets.DOCKER_REPOSITORY }}
           
   flink:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
@@ -31,6 +33,7 @@ jobs:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_token: ${{ secrets.DOCKER_TOKEN }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_repository: ${{ secrets.DOCKER_REPOSITORY }}
            
   hbase:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
@@ -40,6 +43,7 @@ jobs:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_token: ${{ secrets.DOCKER_TOKEN }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_repository: ${{ secrets.DOCKER_REPOSITORY }}
           
   mysql:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
@@ -49,6 +53,7 @@ jobs:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_token: ${{ secrets.DOCKER_TOKEN }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_repository: ${{ secrets.DOCKER_REPOSITORY }}
           
   quickstart:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
@@ -58,6 +63,7 @@ jobs:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_token: ${{ secrets.DOCKER_TOKEN }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_repository: ${{ secrets.DOCKER_REPOSITORY }}
           
   web:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
@@ -67,6 +73,7 @@ jobs:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_token: ${{ secrets.DOCKER_TOKEN }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_repository: ${{ secrets.DOCKER_REPOSITORY }}
                
   batch:
     uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
@@ -76,4 +83,5 @@ jobs:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_token: ${{ secrets.DOCKER_TOKEN }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_repository: ${{ secrets.DOCKER_REPOSITORY }}
 
