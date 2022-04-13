@@ -2,14 +2,8 @@ version: "3.6"
 
 services:
   pinpoint-hbase:
-    build:
-      context: ./pinpoint-hbase/
-      dockerfile: Dockerfile
-      args:
-        - PINPOINT_VERSION=${PINPOINT_VERSION}
-
     container_name: "${PINPOINT_HBASE_NAME}"
-    image: "pinpointdocker/pinpoint-hbase:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-hbase:${IMAGE_VERSION}"
     networks:
       - pinpoint
 
@@ -35,15 +29,9 @@ services:
       - zoo1
 
   pinpoint-mysql:
-    build:
-      context: ./pinpoint-mysql/
-      dockerfile: Dockerfile
-      args:
-        - PINPOINT_VERSION=${PINPOINT_VERSION}
-    
     container_name: pinpoint-mysql
     restart: always
-    image: "pinpointdocker/pinpoint-mysql:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-mysql:${IMAGE_VERSION}"
     hostname: pinpoint-mysql
     ports:
       - "3306:3306"
@@ -59,14 +47,9 @@ services:
       - pinpoint
 
   pinpoint-web:
-    build:
-      context: ./pinpoint-web/
-      dockerfile: Dockerfile
-      args:
-        - PINPOINT_VERSION=${PINPOINT_VERSION}
 
     container_name: "${PINPOINT_WEB_NAME}"
-    image: "pinpointdocker/pinpoint-web:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-web:${IMAGE_VERSION}"
 
     depends_on:
       - pinpoint-hbase
@@ -111,14 +94,8 @@ services:
       - pinpoint
 
   pinpoint-collector:
-    build:
-      context: ./pinpoint-collector/
-      dockerfile: Dockerfile
-      args:
-        - PINPOINT_VERSION=${PINPOINT_VERSION}
-
     container_name: "${PINPOINT_COLLECTOR_NAME}"
-    image: "pinpointdocker/pinpoint-collector:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-collector:${IMAGE_VERSION}"
 
     depends_on:
       - pinpoint-hbase
@@ -152,22 +129,15 @@ services:
       - FLINK_CLUSTER_ZOOKEEPER_ADDRESS=${FLINK_CLUSTER_ZOOKEEPER_ADDRESS}
 
   pinpoint-batch:
-    build:
-      context: ./pinpoint-batch/
-      dockerfile: Dockerfile
-      args:
-        - PINPOINT_VERSION=${PINPOINT_VERSION}
 
     container_name: "${PINPOINT_BATCH_NAME}"
-    image: "pinpointdocker/pinpoint-batch:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-batch:${IMAGE_VERSION}"
 
     depends_on:
       - pinpoint-hbase
       - pinpoint-mysql
       - zoo1
     restart: always
-    ports:
-      - "${BATCH_SERVER_PORT:-8079}:${BATCH_SERVER_PORT:-8079}"
     environment:
       - BATCH_SERVER_PORT=${BATCH_SERVER_PORT}
       - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES}
@@ -200,14 +170,10 @@ services:
     networks:
       - pinpoint
   pinpoint-quickstart:
-    build:
-      context: ./pinpoint-quickstart/
-      dockerfile: Dockerfile
-
     container_name: "pinpoint-quickstart"
-    image: "pinpointdocker/pinpoint-quickstart"
+    image: "galam/pinpoint-quickstart"
     ports:
-      - "${APP_PORT:-8085}:8085"
+      - "${APP_PORT:-8085}:8080"
     volumes:
       - data-volume:/pinpoint-agent
     environment:
@@ -218,14 +184,8 @@ services:
       - pinpoint-agent
 
   pinpoint-agent:
-    build:
-      context: ./pinpoint-agent/
-      dockerfile: Dockerfile
-      args:
-        - PINPOINT_VERSION=${PINPOINT_VERSION}
-
     container_name: "${PINPOINT_AGENT_NAME}"
-    image: "pinpointdocker/pinpoint-agent:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-agent:${IMAGE_VERSION}"
 
     restart: unless-stopped
 
@@ -297,14 +257,8 @@ services:
 
   ##flink
   jobmanager:
-    build:
-      context: pinpoint-flink
-      dockerfile: Dockerfile
-      args:
-        - PINPOINT_VERSION=${PINPOINT_VERSION}
-
     container_name: "${PINPOINT_FLINK_NAME}-jobmanager"
-    image: "pinpointdocker/pinpoint-flink:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-flink:${IMAGE_VERSION}"
     expose:
       - "6123"
     ports:
@@ -319,14 +273,8 @@ services:
       - zoo1
 
   taskmanager:
-    build:
-      context: pinpoint-flink
-      dockerfile: Dockerfile
-      args:
-        - PINPOINT_VERSION=${PINPOINT_VERSION}
-
     container_name: "${PINPOINT_FLINK_NAME}-taskmanager"
-    image: "pinpointdocker/pinpoint-flink:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-flink:${IMAGE_VERSION}"
     expose:
       - "6121"
       - "6122"

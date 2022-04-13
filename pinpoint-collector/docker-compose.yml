@@ -9,7 +9,7 @@ services:
         - PINPOINT_VERSION=${PINPOINT_VERSION}
 
     container_name: "${PINPOINT_COLLECTOR_NAME}"
-    image: "pinpointdocker/pinpoint-collector:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-collector:${PINPOINT_VERSION}"
 
     restart: always
     expose:

@@ -10,7 +10,7 @@ services:
         - PINPOINT_VERSION=${PINPOINT_VERSION}
 
     container_name: "${PINPOINT_AGENT_NAME}"
-    image: "pinpointdocker/pinpoint-agent:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-agent:${PINPOINT_VERSION}"
 
     restart: unless-stopped
 

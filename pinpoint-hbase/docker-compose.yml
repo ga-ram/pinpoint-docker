@@ -9,7 +9,7 @@ services:
         - PINPOINT_VERSION=${PINPOINT_VERSION}
 
     container_name: "${PINPOINT_HBASE_NAME}"
-    image: "pinpointdocker/pinpoint-hbase:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-hbase:${PINPOINT_VERSION}"
 
     volumes:
       - /home/pinpoint/hbase

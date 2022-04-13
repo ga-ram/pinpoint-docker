@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
 
     container_name: "pinpoint-quickstart"
-    image: "pinpointdocker/pinpoint-quickstart"
+    image: "galam/pinpoint-quickstart"
     ports:
       - "${APP_PORT:-8085}:8085"
     volumes:
@@ -27,7 +27,7 @@ services:
         - PINPOINT_VERSION=${PINPOINT_VERSION}
 
     container_name: "${PINPOINT_AGENT_NAME}"
-    image: "pinpointdocker/pinpoint-agent:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-agent:${PINPOINT_VERSION}"
 
     restart: unless-stopped
 

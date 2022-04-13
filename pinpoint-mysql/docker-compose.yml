@@ -10,7 +10,7 @@ services:
 
     container_name: pinpoint-mysql
     restart: always
-    image: "pinpointdocker/pinpoint-mysql:${PINPOINT_VERSION}"
+    image: "galam/pinpoint-mysql:${PINPOINT_VERSION}"
 
     hostname: pinpoint-mysql
     ports:
