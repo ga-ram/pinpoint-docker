@@ -6,7 +6,7 @@ on:
 
 jobs:
   agent:
-    uses: galam/pinpoint-docker/.github/workflows/docker-image.yml@garamrelease
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@garamrelease
     with:
       component: pinpoint-agent
     secrets:
