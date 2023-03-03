@@ -156,14 +156,14 @@ services:
     restart: "no"
     entrypoint: >
       sh -c "
-      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-uriStat-table.json > uriStatTable.json &&
-      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-uriStat-schema.json > uriStatSchema.json &&
-      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-tag-table.json > tagTable.json &&
-      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-tag-schema.json > tagSchema.json &&
-      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-double-table.json > doubleTable.json &&
-      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-double-schema.json > doubleSchema.json &&
-      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-dataType-table.json > dataTypeTable.json &&
-      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-dataType-schema.json > dataTypeSchema.json &&
+      curl https://raw.githubusercontent.com/ga-ram/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-uriStat-table.json > uriStatTable.json &&
+      curl https://raw.githubusercontent.com/ga-ram/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-uriStat-schema.json > uriStatSchema.json &&
+      curl https://raw.githubusercontent.com/ga-ram/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-tag-table.json > tagTable.json &&
+      curl https://raw.githubusercontent.com/ga-ram/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-tag-schema.json > tagSchema.json &&
+      curl https://raw.githubusercontent.com/ga-ram/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-double-table.json > doubleTable.json &&
+      curl https://raw.githubusercontent.com/ga-ram/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-double-schema.json > doubleSchema.json &&
+      curl https://raw.githubusercontent.com/ga-ram/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-dataType-table.json > dataTypeTable.json &&
+      curl https://raw.githubusercontent.com/ga-ram/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-dataType-schema.json > dataTypeSchema.json &&
 
       sed -i 's/localhost:19092/pinpoint-kafka:9092/g' uriStatTable.json tagTable.json doubleTable.json dataTypeTable.json &&
 
@@ -195,5 +195,5 @@ services:
       - pinpoint-collector
     entrypoint: >
       sh -c "
-      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/telegraf/pinpoint-telegraf.conf > telegraf.conf &&
+      curl https://raw.githubusercontent.com/ga-ram/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/telegraf/pinpoint-telegraf.conf > telegraf.conf &&
       telegraf -config telegraf.conf"

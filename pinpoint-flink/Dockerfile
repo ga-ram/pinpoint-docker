@@ -1,6 +1,6 @@
 FROM flink:1.14-java11
 ARG PINPOINT_VERSION=${PINPOINT_VERSION:-2.5.1}
-ARG INSTALL_URL=https://github.com/pinpoint-apm/pinpoint/releases/download/v${PINPOINT_VERSION}/pinpoint-flink-job-${PINPOINT_VERSION}.jar
+ARG INSTALL_URL=https://github.com/ga-ram/pinpoint/releases/download/v${PINPOINT_VERSION}/pinpoint-flink-job-${PINPOINT_VERSION}.jar
 
 RUN apt-get update \
  && apt-get install --no-install-recommends -y zip \
