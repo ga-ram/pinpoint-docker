@@ -166,8 +166,6 @@ services:
       curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/pinot/pinot-dataType-schema.json > dataTypeSchema.json &&
 
       sed -i 's/localhost:19092/pinpoint-kafka:9092/g' uriStatTable.json tagTable.json doubleTable.json dataTypeTable.json &&
-      sed -i 's/uri-stat/url-stat/g' uriStatTable.json &&
-      sed -i '3,$$s/Double/DOUBLE/' doubleSchema.json &&
 
       sleep 30 &&
       /opt/pinot/bin/pinot-admin.sh AddTable -schemaFile uriStatSchema.json -realtimeTableConfigFile uriStatTable.json -controllerHost pinot-controller -controllerPort 9000 -exec &&
@@ -197,18 +195,5 @@ services:
       - pinpoint-collector
     entrypoint: >
       sh -c "
-      echo '
-      [[inputs.cpu]]\
-        percpu = true\
-        totalcpu = true\
-        collect_cpu_time = false\
-        report_active = false\
-
-      [[outputs.http]]\
-        url = \"http://pinpoint-collector:15200/telegraf\"\
-        data_format = \"json\"\
-        [outputs.http.headers]\
-          hostGroupName = \"pinpoint-docker\"\
-          Content-Type = \"application/json\"\' > telegraf.conf &&
-      cat telegraf.conf &&
+      curl https://raw.githubusercontent.com/pinpoint-apm/pinpoint/v${PINPOINT_VERSION}/metric-module/metric/src/main/telegraf/pinpoint-telegraf.conf > telegraf.conf &&
       telegraf -config telegraf.conf"
