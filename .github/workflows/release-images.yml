@@ -6,7 +6,7 @@ on:
 
 jobs:
   agent:
-    uses: pinpoint-apm/pinpoint-docker/.github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-agent
     secrets:
@@ -15,7 +15,7 @@ jobs:
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
 
   collector:
-    uses: pinpoint-apm/pinpoint-docker/.github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-collector
     secrets:
@@ -24,7 +24,7 @@ jobs:
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
           
   flink:
-    uses: pinpoint-apm/pinpoint-docker/.github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-flink
     secrets:
@@ -33,7 +33,7 @@ jobs:
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
            
   hbase:
-    uses: pinpoint-apm/pinpoint-docker/.github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-hbase
     secrets:
@@ -42,7 +42,7 @@ jobs:
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
           
   mysql:
-    uses: pinpoint-apm/pinpoint-docker/.github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-mysql
     secrets:
@@ -51,7 +51,7 @@ jobs:
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
           
   quickstart:
-    uses: pinpoint-apm/pinpoint-docker/.github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-quickstart
     secrets:
@@ -60,7 +60,7 @@ jobs:
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
           
   web:
-    uses: pinpoint-apm/pinpoint-docker/.github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-web
     secrets:
@@ -69,7 +69,7 @@ jobs:
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
           
   batch:
-    uses: pinpoint-apm/pinpoint-docker/.github/workflows/docker-image.yml@master
+    uses: ga-ram/pinpoint-docker/.github/workflows/docker-image.yml@master
     with:
       component: pinpoint-batch
     secrets:
